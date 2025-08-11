@@ -18,7 +18,7 @@ class Vendor(models.Model):
     return_policy = models.TextField()
 
 
-class Catgory(models.Model):
+class Category(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100,unique=True)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
@@ -28,7 +28,7 @@ class Catgory(models.Model):
     
 class Product(models.Model):
     vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
-    category = models.ForeignKey(Catgory, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100,unique=True)
     description = models.TextField()
@@ -96,13 +96,13 @@ class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-class Wishist(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='wishist')
-    products = models.ManyToManyField(Product, related_name='wishist')
+class Wishlist(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='Wishlist')
+    products = models.ManyToManyField(Product, related_name='Wishlist')
 
 
 class Notification(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='wishist')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='Wishlist')
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
