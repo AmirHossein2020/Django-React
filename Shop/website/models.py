@@ -65,7 +65,7 @@ class Cart(models.Model):
 
 
 class CartItem(models.Model):
-    cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='items',null=True,blank=True)
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='Items',null=True,blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
 
@@ -78,13 +78,13 @@ class Shipping(models.Model):
 class Payment(models.Model):
     order = models.ForeignKey(Order, on_delete= models.CASCADE, related_name='pyments')
     method = models.CharField(max_length=100)
-    amount = models.DecimalField(max_digit=10,decimal_places=2)
+    amount = models.DecimalField(max_digits=10,decimal_places=2)
     transaction_id = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now=True)
 
 class Coupon(models.Model):
     code = models.CharField(max_length=100, unique=True)
-    discount = models.DecimalField(max_digit=10,decimal_places=2)
+    discount = models.DecimalField(max_digits=10,decimal_places=2)
     valid_from = models.DateTimeField()
     valid_to = models.DateTimeField()
 
@@ -102,13 +102,13 @@ class Wishlist(models.Model):
 
 
 class Notification(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='Wishlist')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notifications')
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
 
 class Blog(models.Model):
-    title = models.CharField()
+    title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100,unique=True)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')

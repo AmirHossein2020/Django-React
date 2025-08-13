@@ -20,7 +20,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
     category = CategorySerializer(read_only = True)
     vendor = VendorSerializer(read_only = True)
-    reviews = serializers.StringRelatedfield(many = True, read_only=True)
+    reviews = serializers.SlugRelatedField(many = True, read_only=True,slug_field='id')
     class Meta:
         model = Product
         fields = '__all__'
