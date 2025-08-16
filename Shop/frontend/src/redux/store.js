@@ -1,6 +1,6 @@
 import {creatStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk'
-import categoriesReducer from '../reducers/categoriesReducers';
+import categoriesReducer from './categoriesReducers';
 import productsReducer from '../reducers/productsReducers';
 
 const rootReducer = combineReducers({
