@@ -1,0 +1,21 @@
+import React from "react";
+import {Link, link} from 'react-router-dom';
+
+const CategoryList = ({categories}) => {
+    return(
+        <div>
+            <h3>
+                CategoryList
+            </h3>
+            <ul>
+                {categories.map((category) => (
+                    <li key={category.id}>
+                        <Link to = {`/categories/${category.slug}`}>{category.name}</Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default CategoryList;

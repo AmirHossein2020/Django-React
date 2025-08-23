@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import HomePage from './components/HomePage'
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <>
+    <Router>
     
     {/*Navigation Bar starts*/}
           <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -43,7 +45,8 @@ function App() {
             </div>
       </nav>
     {/*Navigation Bar ends*/}
-    </>
+    <HomePage  />
+    </Router>
   );
 }
 

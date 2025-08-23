@@ -3,8 +3,8 @@ import { useDispatch , useSelector } from 'react-redux';
 import {fetchCategories} from '../redux/actions/categoriesActions';
 import {fetchProducts} from '../redux/actions/productsActions';
 import CategoryList from '../components/CategoryList';
-import FlashSales from '../components/FlashSalesProducts';
-import TopSelling from '../components/TopSellingProducts';
+import FlashSalesProducts from '../components/FlashSaleProducts';
+import TopSellingProducts from '../components/TopSellingProducts';
 import CategoryProducts from '../components/CategoryProducts';
 
 const HomePage = () => {
