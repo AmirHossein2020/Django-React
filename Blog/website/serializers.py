@@ -1,4 +1,4 @@
-from website.models import Athour, blog
+from website.models import Athour, blog , Post
 from rest_framework import serializers
 
 class AthourSerializer(serializers.ModelSerializer):
@@ -12,3 +12,11 @@ class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = blog
         fields = ['id', 'titel', 'athour', 'content', 'created_at', 'image']
+
+class PostSerializer(serializers.ModelSerializer):
+    post_blog = BlogSerializer()
+
+    class Meta:
+        model = blog
+        fields = ['id', 'titel', 'athour', 'content', 'created_at', 'image', 'post_blog', 'slug']
+

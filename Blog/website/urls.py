@@ -5,6 +5,7 @@ from website.views import *
 router = routers.DefaultRouter()
 router.register(r'blogs', BlogViewSet)
 router.register(r'athours', AthourViewSet)
+router.register(r'posts', PostViewSet)
 
 
 urlpatterns = [
