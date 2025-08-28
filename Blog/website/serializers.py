@@ -14,9 +14,9 @@ class BlogSerializer(serializers.ModelSerializer):
         fields = ['id', 'titel', 'athour', 'content', 'created_at', 'image']
 
 class PostSerializer(serializers.ModelSerializer):
-    post_blog = BlogSerializer()
-
+    blog_post = BlogSerializer()
+    athour = AthourSerializer()
     class Meta:
-        model = blog
-        fields = ['id', 'titel', 'athour', 'content', 'created_at', 'image', 'post_blog', 'slug']
+        model = Post
+        fields = ['id', 'titel', 'athour', 'content', 'created_at', 'image', 'blog_post', 'slug']
 
