@@ -13,11 +13,15 @@ const HomePage = () => {
     const categories = useSelector(state => state.categories);
     const products = useSelector(state => state.products);
 
+    
     useEffect(() => {
         dispatch(fetchCategories());
         dispatch(fetchProducts());
     }, [dispatch]);
+    
+    const flashSaleProducts = products.filter(product => product.is_flash_sale).slice(0, 5);
 
+   
     return (
         <div>
             {/*start row for categories and flash sales*/}
@@ -26,7 +30,7 @@ const HomePage = () => {
                     <CategoryList categories={categories} />
                 </div>
                 <div className="col-md-9">
-                    <FlashSalesProducts products={categories} />
+                    <FlashSalesProducts products={flashSaleProducts} />
                 </div>
             </div>
             {/*Second row row for top selling and category products*/}

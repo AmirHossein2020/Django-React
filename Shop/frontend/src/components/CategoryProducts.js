@@ -1,18 +1,19 @@
 import React from "react";
-import {Link, link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import '../styles.css';
 
 const CategoryProducts = ({ category, products }) => {
-    const categoryProducts = products.filter((product) => product.category.id == category.id);
+    const categoryProducts = products.filter((product) => product.category.id === category.id);
 
     return(
-        <>
+        <div className="category-products">
             <h3>{category.name}</h3>
             <div id={`category-${category.id}`} className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
                     {categoryProducts.map((product, index) => (
                         <div
                         key={product.id}
-                        className={`carousel-item $ {index === 0 ? 'active' : '' }`}>
+                        className={`carousel-item ${index === 0 ? 'active' : '' }`}>
                         <div className="card">
                             <img src={product.image} alt={product.name} />
                             <div className="card-body">
@@ -21,7 +22,7 @@ const CategoryProducts = ({ category, products }) => {
                                 <p className="card-text" >Price: ${product.price}</p>
                                 <p className="card-text" >Stock: {product.stock}</p>
 
-                                <Link to={`/products/${product.slug}`} className="btn btn=primary">View Details</Link>
+                                <Link to={`/products/${product.slug}`} className="btn btn-primary">View Details</Link>
 
                             </div>
 
@@ -46,7 +47,7 @@ const CategoryProducts = ({ category, products }) => {
                 </a>
 
             </div>
-        </>
+        </div>
     );
 };
 

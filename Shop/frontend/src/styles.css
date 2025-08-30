@@ -1,0 +1,8 @@
+.category-products{
+    background-color:aqua;
+}
+.category-products img{
+    width: 300px;
+    object-fit: cover;
+   
+}

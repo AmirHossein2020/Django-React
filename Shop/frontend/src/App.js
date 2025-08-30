@@ -45,7 +45,8 @@ function App() {
             </div>
       </nav>
     {/*Navigation Bar ends*/}
-    <HomePage  />
+    <HomePage/>
+    
     </Router>
   );
 }
