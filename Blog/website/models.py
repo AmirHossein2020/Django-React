@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 # Create your models here.
 
-class Athour(models.Model):
+class Author(models.Model):
     name = models.CharField(max_length=100)
     cover_image = models.ImageField(upload_to='athour/cover', null=True, blank=True)
     profile_image = models.ImageField(upload_to='athour/profile', null=True, blank=True)
@@ -21,7 +21,7 @@ class tag(models.Model):
     
 class blog(models.Model):
     titel = models.CharField(max_length=100)
-    athour = models.ForeignKey(Athour, on_delete=models.CASCADE)
+    athour = models.ForeignKey(Author, on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='images/', null=True, blank=True)
@@ -30,7 +30,7 @@ class blog(models.Model):
 
 class Post(models.Model):
     titel = models.CharField(max_length=100)
-    athour = models.ForeignKey(Athour, on_delete=models.CASCADE)
+    athour = models.ForeignKey(Author, on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='images/', null=True, blank=True)

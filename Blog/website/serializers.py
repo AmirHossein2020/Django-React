@@ -1,9 +1,9 @@
-from website.models import Athour, blog , Post, tag
+from website.models import Author, blog , Post, tag
 from rest_framework import serializers
 
 class AthourSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Athour
+        model = Author
         fields = ['id', 'name','profile_image','cover_image', 'pio', 'location', 'facebook', 'twitter' , 'slug',  'email']
 
 class BlogSerializer(serializers.ModelSerializer):

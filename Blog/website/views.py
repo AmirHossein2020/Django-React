@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import blog, Athour , Post, tag
+from .models import blog, Author , Post, tag
 from .serializers import BlogSerializer, AthourSerializer , PostSerializer, TagSerializer
 from rest_framework import viewsets
 from rest_framework.response import Response
@@ -15,7 +15,7 @@ class BlogViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 class AthourViewSet(viewsets.ModelViewSet):
-    queryset = Athour.objects.all()
+    queryset = Author.objects.all()
     serializer_class = AthourSerializer
     lookup_field = "slug"
 
