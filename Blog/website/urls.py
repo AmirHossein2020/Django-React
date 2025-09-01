@@ -4,7 +4,8 @@ from website.views import *
 
 router = routers.DefaultRouter()
 router.register(r'blogs', BlogViewSet)
-router.register(r'athours', AthourViewSet)
+router.register(r'authors', AthourViewSet)
+router.register(r'tags', TagViewSet)
 router.register(r'posts', PostViewSet)
 
 

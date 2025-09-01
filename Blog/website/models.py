@@ -4,11 +4,21 @@ from django.utils.text import slugify
 
 class Athour(models.Model):
     name = models.CharField(max_length=100)
+    cover_image = models.ImageField(upload_to='athour/cover', null=True, blank=True)
+    profile_image = models.ImageField(upload_to='athour/profile', null=True, blank=True)
+    pio = models.TextField(null=True,blank=True)
+    location = models.TextField(null=True, blank=True)
+    facebook = models.CharField(max_length=1000, null=True, blank=True)
+    twitter = models.CharField(max_length=1000, null=True, blank=True)
     email = models.EmailField()
-
+    slug = models.SlugField(max_length=150, unique=True, blank=True)
     def __str__(self):
         return self.name
-
+class tag(models.Model):
+    name = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
+    
 class blog(models.Model):
     titel = models.CharField(max_length=100)
     athour = models.ForeignKey(Athour, on_delete=models.CASCADE)
@@ -26,6 +36,7 @@ class Post(models.Model):
     image = models.ImageField(upload_to='images/', null=True, blank=True)
     blog_post = models.ForeignKey(blog, on_delete=models.CASCADE, null=True, blank=True)
     slug = models.SlugField(max_length=150, unique=True, blank=True)
+    tag_post = models.ManyToManyField(tag)
 
     def save(self, *args, **kwargs):
         if not self.slug:
