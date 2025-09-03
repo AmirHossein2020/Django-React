@@ -6,17 +6,17 @@ class AthourSerializer(serializers.ModelSerializer):
         model = Author
         fields = ['id', 'name','profile_image','cover_image', 'pio', 'location', 'facebook', 'twitter' , 'slug',  'email']
 
-class BlogSerializer(serializers.ModelSerializer):
-    athour = AthourSerializer()
-
-    class Meta:
-        model = blog
-        fields = ['id', 'titel', 'athour', 'content', 'created_at', 'image']
-
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = tag
         fields = ['id', 'name','description','slug']
+class BlogSerializer(serializers.ModelSerializer):
+    athour = AthourSerializer()
+    
+    class Meta:
+        model = blog
+        fields = ['id', 'titel', 'athour', 'content', 'created_at', 'image']
+
 
 class PostSerializer(serializers.ModelSerializer):
     blog_post = BlogSerializer()
