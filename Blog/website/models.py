@@ -14,8 +14,11 @@ class Author(models.Model):
     slug = models.SlugField(max_length=150, unique=True, blank=True)
     def __str__(self):
         return self.name
+    
 class tag(models.Model):
     name = models.CharField(max_length=100)
+    description = models.TextField(null=True, blank=True)
+    slug = models.SlugField(max_length=150, unique=True)
     def __str__(self):
         return self.name
     
@@ -36,7 +39,7 @@ class Post(models.Model):
     image = models.ImageField(upload_to='images/', null=True, blank=True)
     blog_post = models.ForeignKey(blog, on_delete=models.CASCADE, null=True, blank=True)
     slug = models.SlugField(max_length=150, unique=True, blank=True)
-    tag_post = models.ManyToManyField(tag)
+    tag_post = models.ForeignKey(tag, on_delete=models.SET_NULL, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
