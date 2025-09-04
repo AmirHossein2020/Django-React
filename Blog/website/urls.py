@@ -7,6 +7,8 @@ router.register(r'blogs', BlogViewSet)
 router.register(r'authors', AthourViewSet)
 router.register(r'tags', TagViewSet)
 router.register(r'posts', PostViewSet)
+router.register(r'about', AboutViewSet)
+router.register(r'contect', ContectViewSet)
 
 
 urlpatterns = [

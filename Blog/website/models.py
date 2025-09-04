@@ -52,3 +52,27 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titel
+
+class About(models.Model):
+    titel = models.CharField(max_length=300, null=True, blank=True)
+    image1 = models.ImageField(upload_to='about/image1',null=True, blank=True)
+    description1 = models.TextField(null=True, blank=True)
+    image2 = models.ImageField(upload_to='about/image2',null=True, blank=True)
+    description2 = models.TextField(null=True, blank=True)
+    address = models.TextField(null=True, blank=True)
+    facebook = models.CharField(max_length=1000, null=True, blank=True)
+    twitter = models.CharField(max_length=1000, null=True, blank=True)
+    email = models.EmailField()
+    slug = models.SlugField(max_length=150, unique=True, blank=True)
+
+    def __str__(self):
+        return self.titel
+    
+class Contect(models.Model):
+    name = models.CharField(max_length=250, null=True, blank=True)
+    email = models.EmailField()
+    content = models.TextField(null=True,blank=True)
+    slug = models.SlugField(max_length=150, unique=True, blank=True)
+
+    def __str__(self):
+        return self.name

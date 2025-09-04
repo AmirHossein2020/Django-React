@@ -1,9 +1,30 @@
 from django.shortcuts import render
 from .models import blog, Author , Post, tag
-from .serializers import BlogSerializer, AthourSerializer , PostSerializer, TagSerializer
+from .serializers import *
 from rest_framework import viewsets
 from rest_framework.response import Response
 # Create your views here.
+
+class AboutViewSet(viewsets.ModelViewSet):
+    queryset = About.objects.all()
+    serializer_class = AboutSerializer
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+
+
+class ContectViewSet(viewsets.ModelViewSet):
+    queryset = Contect.objects.all()
+    serializer_class = ContectSerializer
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+
+
 
 class BlogViewSet(viewsets.ModelViewSet):
     queryset = blog.objects.all()
