@@ -15,10 +15,8 @@ These projects are built mainly to **strengthen my programming skills**, gain **
 
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
-| 🛒 **E-commerce Store** | Online shop with product management, cart, and orders | Django, DRF, PostgreSQL, React |
-| 📝 **Blog Platform** | Blog with categories, comments, and user system | Django, DRF, SQLite, React |
-| 🎬 **Movie App** | Movie listing with API integration and favorites | Django, DRF, PostgreSQL, React |
-
+| 🛒 **Shop** | Online shop with product management, cart, and orders | Django, DRF, PostgreSQL, React |
+| 📝 **Blog** | Blog with categories, comments, and user system | Django, DRF, SQLite, React |
 ---
 
 ## ✨ Features
