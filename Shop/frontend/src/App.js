@@ -1,7 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import HomePage from './components/HomePage'
-import { BrowserRouter as Router } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import React from 'react';
+import ProductDetails from './components/ProductDetails';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
@@ -10,14 +13,14 @@ function App() {
     {/*Navigation Bar starts*/}
           <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-              <a className="navbar-brand" href="#">Navbar</a>
+              <Link to="/" className="navbar-brand">Navbar</Link>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#">Home</a>
+                    <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="#">Link</a>
@@ -45,7 +48,11 @@ function App() {
             </div>
       </nav>
     {/*Navigation Bar ends*/}
-    <HomePage/>
+    //Routes
+    <Routes>
+      <Route exact path='/' Component={HomePage}/>
+      <Route exact path='products/:productId' Component={ProductDetails}/>
+    </Routes>
     
     </Router>
   );

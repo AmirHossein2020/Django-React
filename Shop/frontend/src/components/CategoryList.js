@@ -1,5 +1,7 @@
 import React from "react";
-import {Link, link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import '../styles.css';
+
 
 const CategoryList = ({categories}) => {
     return(

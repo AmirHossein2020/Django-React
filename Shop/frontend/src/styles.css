@@ -1,7 +1,7 @@
 .category-products{
     background-color:aqua;
 }
-.category-products img{
+img{
     width: 300px;
     object-fit: cover;
    
