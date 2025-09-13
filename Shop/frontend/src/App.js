@@ -13,7 +13,7 @@ function App() {
     {/*Navigation Bar starts*/}
           <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-              <Link to="/" className="navbar-brand">Navbar</Link>
+              <Link to="/" className="navbar-brand">MyShopBuddy</Link>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
@@ -48,7 +48,7 @@ function App() {
             </div>
       </nav>
     {/*Navigation Bar ends*/}
-    //Routes
+   
     <Routes>
       <Route exact path='/' Component={HomePage}/>
       <Route exact path='products/:productId' Component={ProductDetails}/>
