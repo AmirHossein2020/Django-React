@@ -13,7 +13,7 @@ function App() {
     {/*Navigation Bar starts*/}
           <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-              <Link to="/" className="navbar-brand">MyShopBuddy</Link>
+              <Link to="/" className="navbar-brand">MyShopBuddy<i class="fa-solid fa-cart-plus"></i></Link>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
@@ -23,17 +23,21 @@ function App() {
                     <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
+                    <a className="nav-link" href="#">About</a>
                   </li>
                   <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
+                      Categories
                     </a>
                     <ul className="dropdown-menu">
-                      <li><a className="dropdown-item" href="#">Action</a></li>
-                      <li><a className="dropdown-item" href="#">Another action</a></li>
+                      <li><a className="dropdown-item" href="#">Accessories</a></li>
+                      <li><a className="dropdown-item" href="#">Computers</a></li>
+                      <li><a className="dropdown-item" href="#">Clothings</a></li>
+                      <li><a className="dropdown-item" href="#">Utensils</a></li>
+                      <li><a className="dropdown-item" href="#">Foodstufs</a></li>
+                      <li><a className="dropdown-item" href="#">Tvs</a></li>
                       <li><hr className="dropdown-divider"  /></li>
-                      <li><a className="dropdown-item" href="#">Something else here</a></li>
+                      <li><a className="dropdown-item" href="#">My Acconts</a></li>
                     </ul>
                   </li>
                   <li className="nav-item">
