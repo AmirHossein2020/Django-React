@@ -1,0 +1,49 @@
+.navigation-footer {
+  background-color: #777777;
+  bottom: 0;
+  height: 322px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.navigation-footer .social-icons {
+  height: 40px;
+  left: 80px;
+  position: absolute;
+  top: 176px;
+  width: 184px;
+}
+
+.navigation-footer .divider {
+  height: 1px;
+  left: 80px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 1280px;
+}
+
+.navigation-footer .subtract {
+  height: 35px;
+  left: 617px;
+  position: absolute;
+  top: 157px;
+  width: 205px;
+}
+
+.navigation-footer .img {
+  height: 35px;
+  left: 200px;
+  position: absolute;
+  top: 153px;
+  width: 128px;
+}
+
+.navigation-footer .subtract-2 {
+  height: 36px;
+  left: 1111px;
+  position: absolute;
+  top: 153px;
+  width: 176px;
+}

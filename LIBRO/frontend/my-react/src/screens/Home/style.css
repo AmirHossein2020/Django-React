@@ -1,0 +1,152 @@
+.home {
+  background-color: #ffffff;
+  min-height: 4811px;
+  min-width: 1440px;
+  position: relative;
+  width: 100%;
+}
+
+.home .navigation-footer-instance {
+  bottom: 1485px !important;
+}
+
+.home .navigation {
+  background-color: #959595;
+  height: 191px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.home .vector {
+  height: 127px;
+  left: 442px;
+  position: absolute;
+  top: 27px;
+  width: 592px;
+}
+
+.home .frame {
+  background-color: #092131;
+  height: 978px;
+  left: 0;
+  position: absolute;
+  top: 191px;
+  width: 1440px;
+}
+
+.home .div {
+  background-color: #380a53;
+  height: 875px;
+  left: 0;
+  position: absolute;
+  top: 1169px;
+  width: 1440px;
+}
+
+.home .frame-2 {
+  background-color: #770204;
+  height: 960px;
+  left: 0;
+  position: absolute;
+  top: 2044px;
+  width: 1440px;
+}
+
+.home .element-superjumbo {
+  height: 2814px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 191px;
+  width: 1440px;
+}
+
+.home .image {
+  background: url(https://c.animaapp.com/mggsq05yvmylyH/img/image.png) 50% 50% /
+    cover;
+  border-radius: 8px 0px 0px 8px;
+  display: flex;
+  height: 902px;
+  left: 56px;
+  overflow: hidden;
+  position: absolute;
+  top: 2073px;
+  width: 664px;
+}
+
+.home .rectangle-2 {
+  background-color: #0e0b4c;
+  height: 17px;
+  margin-left: 702px;
+  margin-top: 701px;
+  transform: rotate(180deg);
+  width: 120px;
+}
+
+.home .rectangle-wrapper {
+  background: url(https://c.animaapp.com/mggsq05yvmylyH/img/image-1.png) 50% 50%
+    / cover;
+  border-radius: 8px 0px 0px 8px;
+  display: flex;
+  height: 787px;
+  left: 14px;
+  overflow: hidden;
+  position: absolute;
+  top: 320px;
+  width: 670px;
+}
+
+.home .rectangle-3 {
+  background-color: #31737a;
+  height: 17px;
+  margin-left: 702px;
+  margin-top: 701px;
+  transform: rotate(180deg);
+  width: 120px;
+}
+
+.home .rectangle-instance {
+  left: 76px !important;
+  position: absolute !important;
+  top: 1555px !important;
+  width: 517px !important;
+}
+
+.home .rectangle-2-instance {
+  height: 36px !important;
+  left: 146px !important;
+  width: 227px !important;
+}
+
+.home .design-component-instance-node {
+  height: 102px !important;
+  left: 818px !important;
+  position: absolute !important;
+  top: 2494px !important;
+  width: 535px !important;
+}
+
+.home .rectangle-4 {
+  height: 36px !important;
+  left: 145px !important;
+  top: 30px !important;
+  width: 249px !important;
+}
+
+.home .rectangle-5 {
+  left: calc(50.00% - 53px) !important;
+  position: absolute !important;
+}
+
+.home .image-2 {
+  background: url(https://c.animaapp.com/mggsq05yvmylyH/img/image-2.png) 50% 50%
+    / cover;
+  border-radius: 8px 0px 0px 8px;
+  height: 911px;
+  left: 684px;
+  position: absolute;
+  top: 1059px;
+  width: 756px;
+}

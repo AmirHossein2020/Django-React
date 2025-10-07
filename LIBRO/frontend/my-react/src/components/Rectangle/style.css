@@ -1,0 +1,22 @@
+.rectangle {
+  height: 104px;
+  position: relative;
+  top: 615px;
+  width: 606px;
+}
+
+.rectangle .img-2 {
+  height: 121.25%;
+  left: 0;
+  position: absolute;
+  top: -10.63%;
+  width: 103.63%;
+}
+
+.rectangle .subtract-3 {
+  height: 45px;
+  left: 110px;
+  position: absolute;
+  top: 31px;
+  width: 389px;
+}
