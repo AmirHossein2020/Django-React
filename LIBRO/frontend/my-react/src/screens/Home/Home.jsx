@@ -6,13 +6,12 @@ import "./style.css";
 export const Home = () => {
   return (
     <div className="home" data-model-id="1:902">
-      <NavigationFooter className="navigation-footer-instance" />
       <div className="navigation" />
 
       <img
         className="vector"
         alt="Vector"
-        src="https://c.animaapp.com/mggsq05yvmylyH/img/vector.svg"
+        src="https://c.animaapp.com/mgiamxfpjKP3G4/img/vector.svg"
       />
 
       <div className="frame" />
@@ -24,7 +23,7 @@ export const Home = () => {
       <img
         className="element-superjumbo"
         alt="Element superjumbo"
-        src="https://c.animaapp.com/mggsq05yvmylyH/img/24manguel-superjumbo--1--1.png"
+        src="https://c.animaapp.com/mgiamxfpjKP3G4/img/24manguel-superjumbo--1--1.png"
       />
 
       <div className="image">
@@ -45,6 +44,8 @@ export const Home = () => {
       />
       <Rectangle className="rectangle-5" />
       <div className="image-2" />
+
+      <NavigationFooter className="navigation-footer-instance" />
     </div>
   );
 };
