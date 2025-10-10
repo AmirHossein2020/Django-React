@@ -1,51 +1,49 @@
 import React from "react";
-import { NavigationFooter } from "../../components/NavigationFooter";
-import { Rectangle } from "../../components/Rectangle";
-import "./style.css";
+import "./Home.css";
 
 export const Home = () => {
   return (
-    <div className="home" data-model-id="1:902">
-      <div className="navigation" />
+    <div
+      className="home"
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL + "/images/bg.jpg"})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="overlay" />
 
-      <img
-        className="vector"
-        alt="Vector"
-        src="https://c.animaapp.com/mgiamxfpjKP3G4/img/vector.svg"
-      />
+      <header className="header">
+        <h1>LIBRO</h1>
+      </header>
 
-      <div className="frame" />
+      <section className="section blue-section">
+        <div className="section-content">
+          <img src="images/image-1.png" alt="Book cover" className="section-image" />
+          <button className="btn">Search your book</button>
+        </div>
+      </section>
 
-      <div className="div" />
+      <section className="section purple-section">
+        <div className="section-content">
+          <img src="images/image-2.png" alt="Books" className="section-image" />
+          <button className="btn">Our books</button>
+        </div>
+      </section>
 
-      <div className="frame-2" />
+      <section className="section red-section">
+        <div className="section-content">
+          <img src="images/image-3.png" alt="Question mark made of books" className="section-image" />
+          <button className="btn">Book Order</button>
+        </div>
+      </section>
 
-      <img
-        className="element-superjumbo"
-        alt="Element superjumbo"
-        src="https://c.animaapp.com/mgiamxfpjKP3G4/img/24manguel-superjumbo--1--1.png"
-      />
-
-      <div className="image">
-        <div className="rectangle-2" />
-      </div>
-
-      <div className="rectangle-wrapper">
-        <div className="rectangle-3" />
-      </div>
-
-      <Rectangle
-        className="rectangle-instance"
-        subtractClassName="rectangle-2-instance"
-      />
-      <Rectangle
-        className="design-component-instance-node"
-        subtractClassName="rectangle-4"
-      />
-      <Rectangle className="rectangle-5" />
-      <div className="image-2" />
-
-      <NavigationFooter className="navigation-footer-instance" />
+      <footer className="footer">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+      </footer>
     </div>
   );
 };
