@@ -1,12 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-import HomePage from './components/HomePage'
+import HomePage from './components/HomePage';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
+import ProductCard from './components/ProductCard';
+import SearchResultsPage from './components/SearhResultsPage';
 import React from 'react';
 import ProductDetails from './components/ProductDetails';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (searchQuery.trim() !== ''){
+      return <Navigate to={`/search?q${searchQuery}`} />
+    }
+  };
+
   return (
     <Router>
     
