@@ -1,0 +1,101 @@
+.search-page {
+  position: relative;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+/* اختیاری: اگر بخوای پس‌زمینه تاریک‌تر بشه */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.header {
+  background-color: rgba(189, 189, 189, 0.9);
+  padding: 12px 0;
+  z-index: 2;
+}
+
+.header h1 {
+  color: #001a40;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.search-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.search-text {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.search-input {
+  width: 280px;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-btn {
+  background-color: #001f80;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #0000cc;
+}
+
+.footer {
+  background-color: rgba(189, 189, 189, 0.9);
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-link {
+  background: none;
+  border: none;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}

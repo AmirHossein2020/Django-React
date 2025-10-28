@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
+
+
+
+
 export const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div
       className="home"
@@ -21,7 +28,9 @@ export const Home = () => {
       <section className="section blue-section">
         <div className="section-content">
           <img src="images/image-1.png" alt="Book cover" className="section-image" />
-          <button className="btn">Search your book</button>
+          <button className="btn" onClick={() => navigate("/search")}>
+            Search your book
+          </button>
         </div>
       </section>
 
@@ -40,10 +49,12 @@ export const Home = () => {
       </section>
 
       <footer className="footer">
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
+        <button className="footer-link" onClick={() => navigate("/")}>Home</button>
+        <button className="footer-link">About Us</button>
+        <button className="footer-link">Contact</button>
       </footer>
+
+
     </div>
   );
 };
