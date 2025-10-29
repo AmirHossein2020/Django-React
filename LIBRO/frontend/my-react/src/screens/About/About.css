@@ -1,0 +1,112 @@
+.about-page {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  color: #fff;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.header {
+  background-color: rgba(240, 240, 240, 0.95);
+  text-align: center;
+  padding: 20px 0;
+  color: #0b2149;
+  z-index: 2;
+  position: relative;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 10%;
+  position: relative;
+  z-index: 2;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 100%;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+}
+
+.about-text h2 {
+  color: #f7c531;
+  margin-top: 20px;
+  font-size: 1.4rem;
+}
+
+.about-text p {
+  color: #eaeaea;
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Footer همیشه در پایین صفحه */
+.footer {
+  background-color: rgba(240, 240, 240, 0.97);
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 18px 0;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: auto;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* برای اطمینان از قرار گرفتن footer در پایین صفحه */
+.about-page,
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer button {
+  background: none;
+  border: none;
+  color: #0b2149;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer button:hover {
+  color: #f7c531;
+}

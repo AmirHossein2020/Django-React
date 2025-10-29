@@ -36,11 +36,9 @@ export const Search = () => {
       </main>
 
       <footer className="footer">
-        <button className="footer-link" onClick={() => navigate("/")}>
-          Home
-        </button>
-        <button className="footer-link">About Us</button>
-        <button className="footer-link">Contact</button>
+        <button className="footer-link" onClick={() => navigate("/")}>Home</button>
+        <button className="footer-link" onClick={() => navigate("/about")}>About Us</button>
+        <button className="footer-link" onClick={() => navigate("/contact")}>Contact</button>
       </footer>
     </div>
   );

@@ -1,0 +1,147 @@
+.contact-page {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.header {
+  background-color: rgba(240, 240, 240, 0.95);
+  text-align: center;
+  padding: 20px 0;
+  color: #0b2149;
+  z-index: 2;
+  position: relative;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 10%;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #222;
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-info h2 {
+  color: #1a3a7a;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #1a3a7a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #284a9a;
+}
+
+/* Footer همیشه در پایین صفحه */
+.footer {
+  background-color: rgba(240, 240, 240, 0.97);
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 18px 0;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: auto;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* برای اطمینان از قرار گرفتن footer در پایین صفحه */
+.about-page,
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer button {
+  background: none;
+  border: none;
+  color: #0b2149;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer button:hover {
+  color: #f7c531;
+}

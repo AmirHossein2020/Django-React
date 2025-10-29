@@ -37,7 +37,9 @@ export const Home = () => {
       <section className="section purple-section">
         <div className="section-content">
           <img src="images/image-2.png" alt="Books" className="section-image" />
-          <button className="btn">Our books</button>
+          <button className="btn" onClick={() => navigate("/ourbooks")}>
+            Our books
+          </button>
         </div>
       </section>
 
@@ -50,8 +52,8 @@ export const Home = () => {
 
       <footer className="footer">
         <button className="footer-link" onClick={() => navigate("/")}>Home</button>
-        <button className="footer-link">About Us</button>
-        <button className="footer-link">Contact</button>
+        <button className="footer-link" onClick={() => navigate("/about")}>About Us</button>
+        <button className="footer-link" onClick={() => navigate("/contact")}>Contact</button>
       </footer>
 
 
