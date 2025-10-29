@@ -46,7 +46,10 @@ export const Home = () => {
       <section className="section red-section">
         <div className="section-content">
           <img src="images/image-3.png" alt="Question mark made of books" className="section-image" />
-          <button className="btn">Book Order</button>
+          <button className="btn" onClick={() => navigate("/bookorder")}>
+            Book Order
+          </button>
+
         </div>
       </section>
 

@@ -5,7 +5,7 @@ import { Search } from "./screens/Home/Search";
 import { OurBooks } from "./screens/OurBooks/OurBooks";
 import { Contact } from "./screens/Contact/Contact";
 import { About } from "./screens/About/About";
-
+import { BookOrder } from "./screens/BookOrder/BookOrder";
 
 function App() {
   return (
@@ -15,6 +15,8 @@ function App() {
       <Route path="/ourbooks" element={<OurBooks />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/bookorder" element={<BookOrder />} />
+
     </Routes>
   );
 }
