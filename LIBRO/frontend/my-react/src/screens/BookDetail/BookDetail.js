@@ -47,7 +47,7 @@ export const BookDetail = () => {
       <main className="book-detail-container">
         <div className="book-detail-card">
           <img
-            src={book.image ? `http://127.0.0.1:8000${book.image}` : "/images/default-book.png"}
+            src={book.image}
             alt={book.title}
             className="book-detail-image"
           />
