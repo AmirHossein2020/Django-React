@@ -1,101 +1,176 @@
 .search-page {
   position: relative;
-  color: white;
   min-height: 100vh;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: center;
-  font-family: "Arial", sans-serif;
 }
 
-/* اختیاری: اگر بخوای پس‌زمینه تاریک‌تر بشه */
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 0;
 }
 
 .header {
-  background-color: rgba(189, 189, 189, 0.9);
-  padding: 12px 0;
-  z-index: 2;
-}
-
-.header h1 {
-  color: #001a40;
-  font-size: 2.5rem;
-  letter-spacing: 3px;
-  margin: 0;
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .search-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  gap: 20px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
 }
 
 .search-text {
-  font-size: 1.1rem;
-  line-height: 1.5;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
 }
 
 .search-input {
-  width: 280px;
-  padding: 12px 15px;
+  width: 320px;
+  padding: 0.8rem 1rem;
+  border-radius: 20px;
   border: none;
-  border-radius: 25px;
-  font-size: 1rem;
   outline: none;
+  font-size: 1rem;
 }
 
 .search-btn {
-  background-color: #001f80;
+  padding: 0.8rem 1.4rem;
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 30px;
-  border-radius: 8px;
-  font-weight: bold;
+  border-radius: 20px;
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .search-btn:hover {
-  background-color: #0000cc;
+  background-color: #0056b3;
+}
+
+/* نتایج جستجو */
+.results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.book-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.book-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.book-info {
+  margin-top: 0.8rem;
+}
+
+.book-title {
+  font-size: 1.1rem;
+  margin: 0.4rem 0;
+  font-weight: bold;
+}
+
+.book-author {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.book-genre {
+  font-size: 0.85rem;
+  color: #cce5ff;
+}
+
+.book-price {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.details-btn {
+  margin-top: 0.8rem;
+  padding: 0.5rem 1rem;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.details-btn:hover {
+  background-color: #0097a7;
+}
+
+.no-results {
+  color: #ccc;
+  margin-top: 2rem;
+  font-size: 1rem;
 }
 
 .footer {
-  background-color: rgba(189, 189, 189, 0.9);
-  padding: 10px 0;
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
   display: flex;
   justify-content: center;
-  gap: 60px;
-  position: relative;
-  z-index: 2;
+  gap: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .footer-link {
   background: none;
   border: none;
-  color: #333;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
+  color: white;
   font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .footer-link:hover {
-  text-decoration: underline;
+  color: #00aaff;
 }

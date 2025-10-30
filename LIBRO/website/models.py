@@ -35,6 +35,7 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     summary = models.TextField()
+    image = models.ImageField(upload_to='book_images', null=True, blank=True)
     isbn = models.CharField('ISBN', max_length=13, unique=True)
     genre = models.CharField(max_length=200, help_text='Enter a book genre (e.g. Science Fiction, Romance, etc.)')
     price = models.DecimalField(max_digits=10, decimal_places=2)

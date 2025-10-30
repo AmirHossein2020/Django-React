@@ -6,6 +6,8 @@ import { OurBooks } from "./screens/OurBooks/OurBooks";
 import { Contact } from "./screens/Contact/Contact";
 import { About } from "./screens/About/About";
 import { BookOrder } from "./screens/BookOrder/BookOrder";
+import { BookDetail } from "./screens/BookDetail/BookDetail";
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/bookorder" element={<BookOrder />} />
+      <Route path="/book/:id" element={<BookDetail />} />   
 
     </Routes>
   );
