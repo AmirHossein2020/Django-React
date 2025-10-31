@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
-
-
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 
 
@@ -21,9 +21,7 @@ export const Home = () => {
     >
       <div className="overlay" />
 
-      <header className="header">
-        <h1>LIBRO</h1>
-      </header>
+      <Header />
 
       <section className="section blue-section">
         <div className="section-content">
@@ -53,11 +51,7 @@ export const Home = () => {
         </div>
       </section>
 
-      <footer className="footer">
-        <button className="footer-link" onClick={() => navigate("/")}>Home</button>
-        <button className="footer-link" onClick={() => navigate("/about")}>About Us</button>
-        <button className="footer-link" onClick={() => navigate("/contact")}>Contact</button>
-      </footer>
+      <Footer />
 
 
     </div>

@@ -1,10 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 import "./Contact.css";
 
 export const Contact = () => {
-  const navigate = useNavigate();
-
+  
   return (
     <div
       className="contact-page"
@@ -14,9 +14,7 @@ export const Contact = () => {
     >
       <div className="overlay"></div>
 
-      <header className="header">
-        <h1>Contact Us</h1>
-      </header>
+      < Header />
 
       <main className="contact-container">
         <div className="contact-card">
@@ -44,11 +42,7 @@ export const Contact = () => {
         </div>
       </main>
 
-      <footer className="footer">
-        <button className="footer-link" onClick={() => navigate("/")}>Home</button>
-        <button className="footer-link" onClick={() => navigate("/about")}>About Us</button>
-        <button className="footer-link" onClick={() => navigate("/contact")}>Contact</button>
-      </footer>
+      <Footer />
     </div>
   );
 };

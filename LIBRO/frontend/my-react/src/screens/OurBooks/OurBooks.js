@@ -1,34 +1,83 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 import { useNavigate } from "react-router-dom";
 import "./OurBooks.css";
 
 export const OurBooks = () => {
   const navigate = useNavigate();
+  const [categories, setCategories] = useState([]);
+  const [booksByCategory, setBooksByCategory] = useState({});
 
-  const books = [
-    { id: 1, title: "The Great Gatsby", price: "$25", cover: "/images/book-cover.jpg" },
-    { id: 2, title: "1984", price: "$22", cover: "/images/book-cover.jpg" },
-    { id: 3, title: "Pride and Prejudice", price: "$20", cover: "/images/book-cover.jpg" },
-    { id: 4, title: "To Kill a Mockingbird", price: "$23", cover: "/images/book-cover.jpg" },
-    { id: 5, title: "Moby Dick", price: "$28", cover: "/images/book-cover.jpg" },
-  ];
+  // 📦 گرفتن دسته‌بندی‌ها و کتاب‌ها از بک‌اند
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [catRes, bookRes] = await Promise.all([
+          axios.get("http://127.0.0.1:8000/api/categories/"),
+          axios.get("http://127.0.0.1:8000/api/books/"),
+        ]);
 
-  const renderBooks = (title) => (
-    <section className="book-section">
-      <h3>{title}</h3>
-      <div className="book-grid">
-        {books.map((book) => (
-          <div className="book-card" key={book.id}>
-            <div className="book-cover">
-              <img src={book.cover} alt={book.title} />
+        const categories = catRes.data;
+        const books = bookRes.data;
+
+        // گروه‌بندی کتاب‌ها بر اساس دسته‌بندی
+        const grouped = {};
+        categories.forEach((cat) => {
+          grouped[cat.name] = books.filter(
+            (book) => book.category_name === cat.name
+          );
+        });
+
+        setCategories(categories);
+        setBooksByCategory(grouped);
+      } catch (err) {
+        console.error("Error fetching books or categories:", err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // 📚 رندر کردن هر بخش دسته‌بندی
+  const renderBooks = (category, books) => (
+    <section className="book-section" key={category}>
+      <h3>{category}</h3>
+      {books.length > 0 ? (
+        <div className="book-grid">
+          {books.map((book) => (
+            <div className="book-card" key={book.id}>
+              <div className="book-cover">
+                <img
+                  src={
+                    book.image
+                      ? `http://127.0.0.1:8000${book.image}`
+                      : "/images/default-book.png"
+                  }
+                  alt={book.title}
+                />
+                <div className="book-overlay">
+                  <button
+                    className="book-btn"
+                    onClick={() => navigate(`/book/${book.id}`)}
+                  >
+                    View Details
+                  </button>
+                  <button className="book-btn-secondary">Buy Now</button>
+                </div>
+              </div>
+              <div className="book-info">
+                <h4 className="book-title">{book.title}</h4>
+                <p className="book-author">by {book.author}</p>
+                <p className="book-price">${book.price}</p>
+              </div>
             </div>
-            <div className="book-info">
-              <h4>{book.title}</h4>
-              <p className="book-price">{book.price}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <p className="no-books">No books available in this category.</p>
+      )}
     </section>
   );
 
@@ -41,33 +90,19 @@ export const OurBooks = () => {
     >
       <div className="overlay"></div>
 
-      <header className="header">
-        <h1>LIBRO</h1>
-      </header>
-
-      <section className="search-area">
-        <p>Find your next favorite book faster with our search tools.</p>
-        <div className="search-box">
-          <input type="text" placeholder="Book name..." />
-          <input type="text" placeholder="Author..." />
-          <input type="text" placeholder="Year..." />
-          <button className="search-btn">
-            <i className="fas fa-search"></i> Search
-          </button>
-        </div>
-      </section>
+      <Header />
 
       <main className="books-container">
-        {renderBooks("Most Popular")}
-        {renderBooks("The Best of Iran")}
-        {renderBooks("Seasonal Discounts")}
+        {categories.length > 0 ? (
+          categories.map((cat) =>
+            renderBooks(cat.name, booksByCategory[cat.name] || [])
+          )
+        ) : (
+          <p className="loading">Loading books...</p>
+        )}
       </main>
 
-      <footer className="footer">
-        <button className="footer-link" onClick={() => navigate("/")}>Home</button>
-        <button className="footer-link" onClick={() => navigate("/about")}>About Us</button>
-        <button className="footer-link" onClick={() => navigate("/contact")}>Contact</button>
-      </footer>
+      <Footer />
     </div>
   );
 };

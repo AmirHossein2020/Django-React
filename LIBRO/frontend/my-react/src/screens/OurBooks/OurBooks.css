@@ -1,201 +1,211 @@
+/* 🖼️ پس‌زمینه و کلیت صفحه */
 .ourbooks-page {
-  position: relative;
   min-height: 100vh;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  font-family: "Poppins", sans-serif;
+  position: relative;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 15, 15, 0.5);
-  z-index: 0;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
 }
 
+/* 🔹 هدر */
 .header {
-  width: 100%;
-  background-color: rgba(240, 240, 240, 0.95);
-  text-align: center;
-  padding: 20px 0;
-  z-index: 2;
-}
-
-.header h1 {
-  font-size: 2.5rem;
-  color: #0b2149;
-  letter-spacing: 3px;
-  margin: 0;
-}
-
-/* SEARCH AREA */
-.search-area {
-  text-align: center;
-  margin: 30px 0 20px;
-  z-index: 2;
   position: relative;
-}
-
-.search-area p {
-  font-size: 1rem;
-  margin-bottom: 15px;
-  color: #ddd;
-}
-
-.search-box {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.search-box input {
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  font-size: 0.95rem;
-  width: 180px;
-}
-
-.search-btn {
-  background-color: #1a3a7a;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.search-btn:hover {
-  background-color: #284a9a;
-}
-
-/* BOOKS GRID */
-.books-container {
-  width: 90%;
-  max-width: 1200px;
+  text-align: center;
+  padding: 2rem 0;
   z-index: 2;
+}
+
+
+
+/* 🔹 محتوای اصلی */
+.books-container {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 4rem;
 }
 
 .book-section {
-  margin-bottom: 40px;
+  margin-bottom: 3rem;
 }
 
 .book-section h3 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-  border-left: 4px solid #f7c531;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border-left: 5px solid #b3b4b4;
   padding-left: 10px;
 }
 
+/* 🔹 گرید کتاب‌ها */
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  gap: 1.5rem;
 }
 
+/* 🔹 کارت کتاب */
 .book-card {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
   overflow: hidden;
-  color: #222;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .book-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
 }
 
+/* 🔹 عکس کتاب */
 .book-cover {
-  height: 220px;
-  background-color: #f1f1f1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
 }
 
 .book-cover img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
+.book-card:hover .book-cover img {
+  transform: scale(1.08);
+}
+
+/* 🔹 افکت Hover دکمه‌ها */
+.book-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: opacity 0.3s ease;
+}
+
+.book-card:hover .book-overlay {
+  opacity: 1;
+}
+
+/* 🔘 دکمه‌ها */
+.book-btn,
+.book-btn-secondary {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.book-btn {
+  background: #00e676;
+  color: #000;
+}
+
+.book-btn:hover {
+  background: #00c853;
+}
+
+.book-btn-secondary {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.book-btn-secondary:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* 🔹 اطلاعات کتاب */
 .book-info {
-  padding: 12px;
-  text-align: center;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 110px;
 }
 
-.book-info h4 {
+.book-title {
   font-size: 1rem;
-  margin: 5px 0;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #fff;
+}
+
+.book-author {
+  font-size: 0.9rem;
+  color: #ccc;
 }
 
 .book-price {
-  color: #0b2149;
-  font-weight: bold;
   font-size: 1rem;
+  font-weight: 700;
+  color: #00e676;
+  margin-top: 0.4rem;
 }
 
-/* FOOTER */
+/* 🔹 فوتر */
 .footer {
-  width: 100%;
-  background-color: rgba(240, 240, 240, 0.95);
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  padding: 15px 0;
   position: relative;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
 }
 
-.footer button {
-  background: none;
-  border: none;
-  color: #0b2149;
-  font-size: 1rem;
+.footer-link {
+  background: transparent;
+  border: 1px solid #00e676;
+  color: #00e676;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
   font-weight: 600;
-  cursor: pointer;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
 }
 
-.footer button:hover {
-  color: #f7c531;
+.footer-link:hover {
+  background: #00e676;
+  color: #000;
 }
 
-/* RESPONSIVE */
+/* 📱 واکنش‌گرا */
 @media (max-width: 768px) {
-  .header h1 {
-    font-size: 2rem;
+  .books-container {
+    padding: 1.5rem;
   }
 
   .book-cover {
-    height: 180px;
+    height: 200px;
+  }
+
+  .book-title {
+    font-size: 0.95rem;
   }
 
   .footer {
     flex-direction: column;
-    gap: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .search-box input {
-    width: 100%;
-  }
-
-  .book-cover {
-    height: 160px;
   }
 }

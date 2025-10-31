@@ -1,9 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 import "./About.css";
 
 export const About = () => {
-  const navigate = useNavigate();
 
   return (
     <div
@@ -14,9 +14,7 @@ export const About = () => {
     >
       <div className="overlay"></div>
 
-      <header className="header">
-        <h1>About Us</h1>
-      </header>
+      <Header />
 
       <main className="about-container">
         <div className="about-content">
@@ -41,11 +39,7 @@ export const About = () => {
         </div>
       </main>
 
-      <footer className="footer">
-        <button onClick={() => navigate("/")}>Home</button>
-        <button onClick={() => navigate("/ourbooks")}>Our Books</button>
-        <button onClick={() => navigate("/contact")}>Contact</button>
-      </footer>
+      <Footer />
     </div>
   );
 };

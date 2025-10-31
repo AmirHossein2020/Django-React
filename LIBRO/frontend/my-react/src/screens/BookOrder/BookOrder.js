@@ -1,9 +1,48 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 import "./BookOrder.css";
 
 export const BookOrder = () => {
-    const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    try {
+      await axios.post("http://127.0.0.1:8000/api/book-order/", formData);
+      setStatus("✅ Your request has been submitted successfully!");
+      setFormData({
+        first_name: "",
+        last_name: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      setStatus("❌ There was an error submitting your request.");
+      console.error(error);
+    }
+  };
+
   return (
     <div
       className="book-order-page"
@@ -16,44 +55,70 @@ export const BookOrder = () => {
     >
       <div className="overlay" />
 
-      <header className="header">
-        <h1>LIBRO</h1>
-      </header>
+      <Header />
 
       <main className="form-container">
         <h2>Book Request</h2>
         <p className="description">
-          By submitting a request to order the desired book, our experts will
-          contact you to follow up and, upon your approval, will provide the
-          customized book.
+          Submit your request to order the desired book. Our experts will
+          contact you soon.
         </p>
 
-        <form className="book-form">
+        <form className="book-form" onSubmit={handleSubmit}>
           <div className="name-fields">
-            <input type="text" placeholder="First name" required />
-            <input type="text" placeholder="Last name" required />
+            <input
+              type="text"
+              name="first_name"
+              placeholder="First name"
+              value={formData.first_name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="last_name"
+              placeholder="Last name"
+              value={formData.last_name}
+              onChange={handleChange}
+              required
+            />
           </div>
 
-          <input type="tel" placeholder="+1234567890" required />
-          <input type="email" placeholder="email@addressdomain.net" required />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone number"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="email@addressdomain.net"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
 
           <textarea
+            name="message"
             placeholder="Enter book information for ordering"
             rows="5"
+            value={formData.message}
+            onChange={handleChange}
             required
           />
 
           <button type="submit" className="submit-btn">
             Submit
           </button>
+
+          {status && <p className="status-message">{status}</p>}
         </form>
       </main>
 
-      <footer className="footer">
-        <button className="footer-link" onClick={() => navigate("/")}>Home</button>
-        <button className="footer-link" onClick={() => navigate("/about")}>About Us</button>
-        <button className="footer-link" onClick={() => navigate("/contact")}>Contact</button>
-      </footer>
+      <Footer />
     </div>
   );
 };

@@ -18,14 +18,7 @@
   z-index: 0;
 }
 
-.header {
-  background-color: rgba(240, 240, 240, 0.95);
-  text-align: center;
-  padding: 20px 0;
-  color: #0b2149;
-  z-index: 2;
-  position: relative;
-}
+
 
 .about-container {
   display: flex;
@@ -97,16 +90,4 @@
   min-height: 100vh;
 }
 
-.footer button {
-  background: none;
-  border: none;
-  color: #0b2149;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: color 0.3s;
-}
 
-.footer button:hover {
-  color: #f7c531;
-}

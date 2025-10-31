@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 import axios from "axios";
 import "./BookDetail.css";
 
@@ -40,9 +42,7 @@ export const BookDetail = () => {
     >
       <div className="overlay" />
 
-      <header className="header">
-        <h1>LIBRO</h1>
-      </header>
+      <Header />
 
       <main className="book-detail-container">
         <div className="book-detail-card">
@@ -64,11 +64,7 @@ export const BookDetail = () => {
         </div>
       </main>
 
-      <footer className="footer">
-        <button className="footer-link" onClick={() => navigate("/")}>Home</button>
-        <button className="footer-link" onClick={() => navigate("/about")}>About Us</button>
-        <button className="footer-link" onClick={() => navigate("/contact")}>Contact</button>
-      </footer>
+      <Footer />
     </div>
   );
 };
